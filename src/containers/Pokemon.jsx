@@ -23,6 +23,7 @@ function Pokemon() {
 
 
     return ( <>
+        {/* Aparece con la variable "pokemon" todas las variables que necesites de la api */}
         <h1>{pokemon?.name}</h1>
         <img src={pokemon?.sprites?.other["official-artwork"].front_default} alt={pokemon?.name} />
 

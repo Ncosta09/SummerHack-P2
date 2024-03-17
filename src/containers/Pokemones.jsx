@@ -1,32 +1,34 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState, useContext } from "react";
 import Item from "../components/Item";
+import Contexto from "../context/Contexto";
+import "../assets/styles/pokemones.css"
 
 function Pokemones() {
 
-    const [pokemones, setPokemones] = useState([]);
-
-    const traemePokemones = async () => {
-        const res = await axios.get("https://pokeapi.co/api/v2/pokemon/");
-        console.log("pokeApi", res.data.results);
-        setPokemones(res.data.results);
-    }
+    const { traemePokemones, pokemones } = useContext(Contexto);
 
     useEffect(() => {
         console.log("useEffect ->");
         traemePokemones();
-    },[])
+    }, [])
 
-    return ( <>
-        <h1>Pokemones</h1>
+    return (<>
 
-        <ul>
-            {pokemones.map((pokemon) => 
-                <Item {...pokemon} key = {pokemon.name}></Item>
-            )}; 
-        </ul>
+        <div className="all-class">
+            <div className="all-section">
 
-    </> );
+                <h1 className="section-title">Pokemones</h1>
+
+                <ul className="unorder-list">
+                    {pokemones.map((pokemon) =>
+                        <Item {...pokemon} key={pokemon.name}></Item>
+                    )};
+                </ul>
+
+            </div>
+        </div>
+
+    </>);
 }
 
 export default Pokemones;
