@@ -7,7 +7,7 @@ function Item(props) {
 
     const { name, url } = props;
     const { guardamePokemones, favoritos, borramePokemonesFavoritos } = useContext(Contexto)
- 
+
     let shortUrl = url.split("/");
     let imgUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" + shortUrl[6] + ".png";
 
@@ -21,7 +21,7 @@ function Item(props) {
     }
 
     let handleQuitarFav = () => {
-        borramePokemonesFavoritos({name: name});
+        borramePokemonesFavoritos({ name: name });
     }
 
     const existeEnFavoritos = favoritos.some(favorito => favorito.name === name);
@@ -30,7 +30,7 @@ function Item(props) {
     return (<>
         <li className="poke-card">
             <div className="poke-card-display">
-                <Link to={"/pokemones/" + shortUrl[6]} className="poke-link">
+                <Link to={"/SummerHack-P2/pokemones/" + shortUrl[6]} className="poke-link"> {/*cambios: SummerHack-P2  */}
                     <div className="poke-img-ubi">
                         <img src={imgUrl} alt={name} className="poke-img" />
                     </div>

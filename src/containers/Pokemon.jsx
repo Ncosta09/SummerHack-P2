@@ -6,7 +6,9 @@ function Pokemon() {
 
     const location = useLocation(); //Me captura la url para saber donde estamos
     const urlPartida = location.pathname.split("/"); //Separa la URL por /
-    const urlPorPokemon =  "https://pokeapi.co/api/v2/pokemon/" + urlPartida[2] + "/"; //La url esta partida en 3 comenzando en la posicion 0, por eso elegimos el 2
+    console.log("URL ---->", urlPartida);
+    //se procede a cambiar el [2], por el [3] ya que se agranda el parametro por el /SummerHack-P2
+    const urlPorPokemon =  "https://pokeapi.co/api/v2/pokemon/" + urlPartida[3] + "/"; //La url esta partida en 3 comenzando en la posicion 0, por eso elegimos el 2
 
     const [pokemon, setPokemon] = useState([]);
 

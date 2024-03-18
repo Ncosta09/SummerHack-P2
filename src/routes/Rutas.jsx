@@ -13,11 +13,11 @@ function Rutas() {
             <UsarContexto>
                 <Layout>
                     <Routes>
-                        <Route path="/" element={<Home />}></Route>
-                        <Route path="/somos" element={<Somos />}></Route>
-                        <Route path="/pokemones" element={<Pokemones />}></Route>
-                        <Route path="/pokemones/*" element={<Pokemon />}></Route>
-                        <Route path="/favoritos" element={<Favoritos />}></Route>
+                        <Route path="/SummerHack-P2/" element={<Home />}></Route> {/*cambios: /SummerHack-P2 */}
+                        <Route path="/SummerHack-P2/somos" element={<Somos />}></Route> {/*cambios: /SummerHack-P2 */}
+                        <Route path="/SummerHack-P2/pokemones" element={<Pokemones />}></Route> {/*cambios: /SummerHack-P2 */}
+                        <Route path="/SummerHack-P2/pokemones/*" element={<Pokemon />}></Route> {/*cambios: /SummerHack-P2 */}
+                        <Route path="/SummerHack-P2/favoritos" element={<Favoritos />}></Route> {/*cambios: /SummerHack-P2 */}
                     </Routes>
                 </Layout>
             </UsarContexto>
