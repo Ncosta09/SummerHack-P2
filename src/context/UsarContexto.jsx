@@ -9,7 +9,7 @@ function UsarContexto(props) {
 
     const estadoInicial = {
         pokemones: [],
-        favoritos: []
+        favoritos:  JSON.parse(localStorage.getItem('favoritos')) || [] //si no viene nada por el localStorage, se pone el valor predeterminado como array vacio
     }
 
     const [state, dispatch] = useReducer(Reducer, estadoInicial);
