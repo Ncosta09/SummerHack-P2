@@ -11,8 +11,6 @@ function GraficoDeBarras(props) {
   const pokeData = stats.map(stat => stat.base_stat);
   const pokeLabels = stats.map(stat => stat.stat.name);
 
-  const valorMaximo = Math.max(...pokeData);
-
   return (
     <div className="grafico-area">
       <hr />
@@ -25,7 +23,7 @@ function GraficoDeBarras(props) {
               <p className="item-titulo">{pokeLabels[index]}</p>
 
               <div className="barra">
-                <div className="barra-completa" style={{ width: `${(valor / valorMaximo) * 100}%` }}></div>
+                <div className="barra-completa" style={{ width: `${valor}%` }}></div>
               </div>
 
               <div className='barra-porcentajes'>

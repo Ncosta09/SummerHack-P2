@@ -26,6 +26,7 @@
 }
 
 .barra-completa {
+    max-width: 100%;
     height: 100%;
     background-color: #C4DFDF;
     border-radius: 8px;
