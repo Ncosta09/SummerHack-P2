@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
-import PolarStatsArea from "../components/PolarStatsArea"
+import GraficoDeBarras from "../components/GraficoDeBarras"
 import "../assets/styles/pokemon.css"
 
 function Pokemon() {
@@ -26,18 +26,34 @@ function Pokemon() {
 
     return ( <>
         {/* Aparece con la variable "pokemon" todas las variables que necesites de la api */}
-        <h1>{pokemon?.name}</h1>
-        <img src={pokemon?.sprites?.other["official-artwork"].front_default} alt={pokemon?.name} />
-        
-        <h3>Tipo</h3>
-        {pokemon?.types?.map((tipo) => (
-            <p key={tipo.type.name}> {tipo.type.name} </p>
-        ))}
+        <div className="all-pokemon-space">
+            <div className="all-pokemon">
+                <div className="pokemon-title">
+                    <h1>{pokemon?.name}</h1>
+                </div>
 
-        <div className="cuadro">
-            {/* <PolarStatsArea {...pokemon}/> */}
+                <div className="pokemon-img-text">
+                    <div className="pokemon-img">
+                        <img src={pokemon?.sprites?.other["official-artwork"].front_default} alt={pokemon?.name} />
+                    </div>
+
+                    <div className="pokemon-text">
+                        <div className="pokemon-first-text">
+                            <h3>Tipo:</h3>
+                            <div className="pokemon-type">
+                                {pokemon?.types?.map((tipo) => (
+                                    <p className={`type-text type-color-${tipo.type.name}`} key={tipo.type.name}> {tipo.type.name} </p>
+                                ))}
+                            </div>    
+                        </div>
+
+                        <div className="pokemon-stats">
+                            <GraficoDeBarras {...pokemon}/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </> );
 }
 
