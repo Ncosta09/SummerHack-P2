@@ -8,6 +8,7 @@ function UsarContexto(props) {
     const {children} = props;
 
     const estadoInicial = {
+        busquedaPokemones: [], //tuve que crear un nuevo array porque sino me hacia sobre el estado pokemones y me modificaba el array principal asi trayendome algunos problemas
         pokemones: [],
         favoritos:  JSON.parse(localStorage.getItem('favoritos')) || [] //si no viene nada por el localStorage, se pone el valor predeterminado como array vacio
     }
@@ -19,6 +20,11 @@ function UsarContexto(props) {
         const res = await axios.get("https://pokeapi.co/api/v2/pokemon/");
         dispatch({type: "LISTAME_POKEMONES", payload: res.data.results});
         
+    }
+
+    const buscamePokemones = (name) => {
+        console.log("pokemon buscado", name);
+        dispatch({type: "BUSCAME_POKEMONES", payload: name});
     }
 
     const guardamePokemones = (item) => {
@@ -36,7 +42,7 @@ function UsarContexto(props) {
     }
 
     return ( 
-        <Contexto.Provider value={{ guardamePokemones, traemePokemones, borramePokemonesFavoritos, pokemones: state.pokemones, favoritos: state.favoritos}}> 
+        <Contexto.Provider value={{ guardamePokemones, traemePokemones, borramePokemonesFavoritos, buscamePokemones, pokemones: state.pokemones, favoritos: state.favoritos}}> 
             {children} 
         </Contexto.Provider> 
     );

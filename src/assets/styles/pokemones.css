@@ -17,8 +17,40 @@
     align-items: center;
 }
 
+.section-title-search{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.searchbar{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.searchbar input{
+    height: 20px;
+    margin-right: 10px;
+    background-color: transparent;
+    border: 1.5px solid black;
+    border-radius: 70px;
+    padding: 5px;
+    outline: none;
+}
+
+.searchbar button{
+    background-color: transparent;
+    border: 1.5px solid black;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+}
+
 .section-title {
-    width: 100%;
+    width: 50%;
     text-align: center;
     margin: 10px 0px;
     padding: 0px;
