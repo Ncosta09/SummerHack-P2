@@ -25,6 +25,12 @@ function Pokemones() {
         }
     }
 
+    const handleEnter = (e) => {
+        if(e.key == "Enter"){
+            handleBuscar();
+        }
+    }
+
     return (<>
 
         <div className="all-class">
@@ -34,7 +40,7 @@ function Pokemones() {
                     <h1 className="section-title">Pokemones</h1>
 
                     <div className="searchbar">
-                        <input type="text" placeholder="Buscar..." onChange={buscarPokemon}/>
+                        <input type="text" placeholder="Buscar..." onChange={buscarPokemon} onKeyDown={handleEnter}/>
                         <button onClick={handleBuscar}>🔎</button>
                     </div>
                 </div>
